@@ -14,6 +14,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor
+
 @Entity
 @Table(schema = "users_schema", name = "t_users")
 public class User {
