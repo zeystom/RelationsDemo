@@ -15,11 +15,13 @@ public record UserDTO (
         @NotNull
         @Size(min = 1, max = 50)
         String name,
+        @NotNull
         @Min(0)
         @Max(150)
         int age,
+
         @NotNull
         Passport passport,
-        List<Account> accounts,
-        Set<Hobby> hobbies
+        List<AccountDTO> accounts,
+        Set<String> hobbies
 ){}

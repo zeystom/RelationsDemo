@@ -26,7 +26,7 @@ public class UserMapper {
         if(dto.accounts() != null){
             List<Account> accountList = dto.accounts().stream().map(account -> {
                 Account a = new Account();
-                a.setTitle(account.getTitle());
+                a.setTitle(account.title());
                 a.setUser(user);
                 return a;
             }).collect(Collectors.toList());

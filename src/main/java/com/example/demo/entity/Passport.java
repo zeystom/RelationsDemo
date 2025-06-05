@@ -4,10 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Data
 @RequiredArgsConstructor
@@ -15,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(schema = "users_schema", name = "t_passport")
+@Builder
 public class Passport {
     @Id
     Long id;
