@@ -9,5 +9,5 @@ import java.util.Optional;
 @Repository
 
 public interface HobbyRepository extends JpaRepository<Hobby, Long> {
-    Optional<Hobby> findByByName(String name);
+    Optional<Hobby> findByName(String name);
 }

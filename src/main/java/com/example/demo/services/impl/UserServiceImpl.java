@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO create(UserDTO user) {
      Set<Hobby> hobbies = user.hobbies().stream()
-             .map(name -> hobbyRepository.findByByName(name)
+             .map(name -> hobbyRepository.findByName(name)
                      .orElseGet(()-> hobbyRepository
                              .save(Hobby.builder().type(name).build()))).collect(Collectors.toSet());
      User userToSave = UserMapper.toEntity(user, List.copyOf(hobbies));
