@@ -6,7 +6,6 @@ import com.example.demo.entity.User;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.repositories.HobbyRepository;
 import com.example.demo.repositories.UserRepository;
-import com.example.demo.services.HobbyService;
 import com.example.demo.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

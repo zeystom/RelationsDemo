@@ -1,14 +1,9 @@
 package com.example.demo.services.impl;
 
 import com.example.demo.DTO.AccountDTO;
-import com.example.demo.DTO.PassportDTO;
-import com.example.demo.DTO.UserDTO;
 import com.example.demo.entity.Account;
-import com.example.demo.mapper.UserMapper;
 import com.example.demo.repositories.AccountRepository;
-import com.example.demo.repositories.UserRepository;
 import com.example.demo.services.AccountService;
-import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

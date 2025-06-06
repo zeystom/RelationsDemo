@@ -1,7 +1,6 @@
 package com.example.demo.mapper;
 
 import com.example.demo.DTO.AccountDTO;
-import com.example.demo.DTO.PassportDTO;
 import com.example.demo.DTO.UserDTO;
 import com.example.demo.entity.Account;
 import com.example.demo.entity.Hobby;

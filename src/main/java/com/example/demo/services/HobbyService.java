@@ -1,6 +1,5 @@
 package com.example.demo.services;
 
-import com.example.demo.DTO.AccountDTO;
 import com.example.demo.DTO.HobbyDTO;
 
 import java.util.List;

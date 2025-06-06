@@ -1,10 +1,7 @@
 package com.example.demo.services.impl;
 
-import com.example.demo.DTO.AccountDTO;
 import com.example.demo.DTO.PassportDTO;
-import com.example.demo.entity.Account;
 import com.example.demo.entity.Passport;
-import com.example.demo.mapper.UserMapper;
 import com.example.demo.repositories.PassportRepository;
 import com.example.demo.services.PassportService;
 import lombok.RequiredArgsConstructor;
