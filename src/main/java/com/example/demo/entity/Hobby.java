@@ -14,6 +14,7 @@ import java.util.Set;
 @Table(schema = "users_schema", name = "t_hobbies")
 public class Hobby {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @Column(name = "c_type")
