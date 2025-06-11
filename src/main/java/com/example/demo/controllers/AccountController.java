@@ -17,14 +17,12 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/Account")
-@Tag(name = "Account API", description = "Operations related to Account management")
 public class AccountController {
     private final AccountService AccountService;
 
     @Operation(
             summary = "Get Account by ID",
-            description = "Retrieve a specific Account by its unique identifier",
-            tags = {"Account", "Read"}
+            description = "Retrieve a specific Account by its unique identifier"
     )
     @ApiResponses({
             @ApiResponse(
@@ -43,8 +41,7 @@ public class AccountController {
 
     @Operation(
             summary = "Get all Accounts",
-            description = "Retrieve a list of all Accounts",
-            tags = {"Account", "Read"}
+            description = "Retrieve a list of all Accounts"
     )
     @ApiResponse(
             responseCode = "200",
@@ -57,8 +54,7 @@ public class AccountController {
 
     @Operation(
             summary = "Create new Account",
-            description = "Create a new Account record",
-            tags = {"Account", "Create"}
+            description = "Create a new Account record"
     )
     @ApiResponses({
             @ApiResponse(
@@ -77,8 +73,7 @@ public class AccountController {
 
     @Operation(
             summary = "Update Account",
-            description = "Update an existing Account by its ID",
-            tags = {"Account", "Update"}
+            description = "Update an existing Account by its ID"
     )
     @ApiResponses({
             @ApiResponse(
@@ -101,8 +96,7 @@ public class AccountController {
 
     @Operation(
             summary = "Delete Account",
-            description = "Delete a Account by its ID",
-            tags = {"Account", "Delete"}
+            description = "Delete a Account by its ID"
     )
     @ApiResponses({
             @ApiResponse(

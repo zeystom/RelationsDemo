@@ -17,14 +17,12 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/Hobby")
-@Tag(name = "Hobby API", description = "Operations related to Hobby management")
 public class HobbyController {
     private final HobbyService HobbyService;
 
     @Operation(
             summary = "Get Hobby by ID",
-            description = "Retrieve a specific Hobby by its unique identifier",
-            tags = {"Hobby", "Read"}
+            description = "Retrieve a specific Hobby by its unique identifier"
     )
     @ApiResponses({
             @ApiResponse(
@@ -43,8 +41,7 @@ public class HobbyController {
 
     @Operation(
             summary = "Get all Hobbys",
-            description = "Retrieve a list of all Hobbys",
-            tags = {"Hobby", "Read"}
+            description = "Retrieve a list of all Hobbys"
     )
     @ApiResponse(
             responseCode = "200",
@@ -57,8 +54,7 @@ public class HobbyController {
 
     @Operation(
             summary = "Create new Hobby",
-            description = "Create a new Hobby record",
-            tags = {"Hobby", "Create"}
+            description = "Create a new Hobby record"
     )
     @ApiResponses({
             @ApiResponse(
@@ -77,8 +73,7 @@ public class HobbyController {
 
     @Operation(
             summary = "Update Hobby",
-            description = "Update an existing Hobby by its ID",
-            tags = {"Hobby", "Update"}
+            description = "Update an existing Hobby by its ID"
     )
     @ApiResponses({
             @ApiResponse(
@@ -101,8 +96,7 @@ public class HobbyController {
 
     @Operation(
             summary = "Delete Hobby",
-            description = "Delete a Hobby by its ID",
-            tags = {"Hobby", "Delete"}
+            description = "Delete a Hobby by its ID"
     )
     @ApiResponses({
             @ApiResponse(

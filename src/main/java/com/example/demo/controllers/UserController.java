@@ -17,14 +17,12 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/User")
-@Tag(name = "User API", description = "Operations related to User management")
 public class UserController {
     private final UserService UserService;
 
     @Operation(
             summary = "Get User by ID",
-            description = "Retrieve a specific User by its unique identifier",
-            tags = {"User", "Read"}
+            description = "Retrieve a specific User by its unique identifier"
     )
     @ApiResponses({
             @ApiResponse(
@@ -43,8 +41,7 @@ public class UserController {
 
     @Operation(
             summary = "Get all Users",
-            description = "Retrieve a list of all Users",
-            tags = {"User", "Read"}
+            description = "Retrieve a list of all Users"
     )
     @ApiResponse(
             responseCode = "200",
@@ -57,8 +54,7 @@ public class UserController {
 
     @Operation(
             summary = "Create new User",
-            description = "Create a new User record",
-            tags = {"User", "Create"}
+            description = "Create a new User record"
     )
     @ApiResponses({
             @ApiResponse(
@@ -77,8 +73,7 @@ public class UserController {
 
     @Operation(
             summary = "Update User",
-            description = "Update an existing User by its ID",
-            tags = {"User", "Update"}
+            description = "Update an existing User by its ID"
     )
     @ApiResponses({
             @ApiResponse(
@@ -101,8 +96,7 @@ public class UserController {
 
     @Operation(
             summary = "Delete User",
-            description = "Delete a User by its ID",
-            tags = {"User", "Delete"}
+            description = "Delete a User by its ID"
     )
     @ApiResponses({
             @ApiResponse(

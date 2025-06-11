@@ -17,14 +17,12 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/passport")
-@Tag(name = "Passport API", description = "Operations related to passport management")
 public class PassportController {
     private final PassportService passportService;
 
     @Operation(
             summary = "Get passport by ID",
-            description = "Retrieve a specific passport by its unique identifier",
-            tags = {"Passport", "Read"}
+            description = "Retrieve a specific passport by its unique identifier"
     )
     @ApiResponses({
             @ApiResponse(
@@ -43,8 +41,7 @@ public class PassportController {
 
     @Operation(
             summary = "Get all passports",
-            description = "Retrieve a list of all passports",
-            tags = {"Passport", "Read"}
+            description = "Retrieve a list of all passports"
     )
     @ApiResponse(
             responseCode = "200",
@@ -57,8 +54,7 @@ public class PassportController {
 
     @Operation(
             summary = "Create new passport",
-            description = "Create a new passport record",
-            tags = {"Passport", "Create"}
+            description = "Create a new passport record"
     )
     @ApiResponses({
             @ApiResponse(
@@ -77,8 +73,7 @@ public class PassportController {
 
     @Operation(
             summary = "Update passport",
-            description = "Update an existing passport by its ID",
-            tags = {"Passport", "Update"}
+            description = "Update an existing passport by its ID"
     )
     @ApiResponses({
             @ApiResponse(
@@ -101,8 +96,7 @@ public class PassportController {
 
     @Operation(
             summary = "Delete passport",
-            description = "Delete a passport by its ID",
-            tags = {"Passport", "Delete"}
+            description = "Delete a passport by its ID"
     )
     @ApiResponses({
             @ApiResponse(
