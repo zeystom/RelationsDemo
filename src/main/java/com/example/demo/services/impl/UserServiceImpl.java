@@ -7,6 +7,7 @@ import com.example.demo.mapper.UserMapper;
 import com.example.demo.repositories.HobbyRepository;
 import com.example.demo.repositories.UserRepository;
 import com.example.demo.services.UserService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.stream.Collectors;
-
+@Transactional
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
