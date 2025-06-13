@@ -1,9 +1,6 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data
@@ -14,6 +11,8 @@ import lombok.*;
 @Builder
 public class Passport {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     Long id;
 
     @Column(name = "c_number")

@@ -11,6 +11,7 @@ import lombok.*;
 @Table(schema = "users_schema", name = "t_account")
 public class Account {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @Column(name = "c_title")
