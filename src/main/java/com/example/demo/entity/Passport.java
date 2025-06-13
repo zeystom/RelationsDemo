@@ -12,7 +12,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(schema = "users_schema", name = "t_passport")
+@Table(schema = "users_schema", name = "t_passports")
 @Builder
 public class Passport {
     @Id
