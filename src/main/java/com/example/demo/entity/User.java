@@ -33,7 +33,8 @@ public class User {
 
     @ManyToMany
     @JoinTable(
-            name = "c_users_hobbies",
+            schema = "users_schema",  // Add schema
+            name = "t_users_hobbies",  // Match actual table name
             joinColumns = @JoinColumn(name = "c_user_id"),
             inverseJoinColumns = @JoinColumn(name = "c_hobby_id")
     )
