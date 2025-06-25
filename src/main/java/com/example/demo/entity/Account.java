@@ -20,4 +20,5 @@ public class Account {
     @ManyToOne
     @JoinColumn(name = "c_user_id")
     User user;
+
 }

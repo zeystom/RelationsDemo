@@ -31,8 +31,11 @@ public class UserMapper {
             }).collect(Collectors.toList());
             user.setAccounts(accountList);
         }
+
+
         user.setHobbies(Set.copyOf(hobbies));
         return user;
+
     }
 
     public static UserDTO toDTO(User user){
@@ -42,8 +45,5 @@ public class UserMapper {
 
         return new UserDTO(user.getName(), user.getAge(), user.getPassport(), accountDTOS, hobbyNames);
     }
-
-
-
 
 }
