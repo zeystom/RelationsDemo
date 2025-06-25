@@ -7,7 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.management.relation.Role;
+import com.example.demo.entity.Role;
 
 @Data
 @AllArgsConstructor
