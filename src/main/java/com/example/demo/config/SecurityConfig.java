@@ -34,13 +34,14 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
-     httpSecurity.csrf(AbstractHttpConfigurer::disable)
-             .authorizeRequests(auth -> auth
-                     .requestMatchers("/auth/register", "/v3/api/docs/**","swagger-ui/**")
-                     .permitAll()
-                     .requestMatchers("/user/**")
-                     .hasRole("USER")).httpBasic(Customizer.withDefaults()).formLogin(Customizer.withDefaults());
-     return httpSecurity.build();
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/auth/register", "/swagger-ui/", "/v3/api-docs/").permitAll()
+                        .requestMatchers("/user/**").hasRole("USER")
+                        .anyRequest().authenticated()
+                )
+                .httpBasic(Customizer.withDefaults());
+        return http.build();
     }
 }

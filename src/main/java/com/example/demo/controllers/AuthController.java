@@ -35,18 +35,14 @@ public class AuthController {
         return ResponseEntity.ok("Register was successful");
     }
 
-    @Operation(
-            summary = "Login an existing user",
-            description = "Endpoint for user authentication"
-    )
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Login successful"),
-            @ApiResponse(responseCode = "401", description = "Unauthorized - invalid credentials"),
-            @ApiResponse(responseCode = "404", description = "User not found"),
-            @ApiResponse(responseCode = "500", description = "Internal server error")
+    @Operation(summary = "Login",  description = "Login for what?", responses = {
+            @ApiResponse(responseCode = "200", description = "Login successfully")
     })
-    @GetMapping("/login")
-    public ResponseEntity<?> login(@RequestBody Authentication authentication) {
-        return ResponseEntity.ok("Login was successful for user: " + authentication.getName());
+    @GetMapping("/me")
+    public ResponseEntity<?> whoAmI(Authentication authentication) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(401).body("Not authenticated");
+        }
+        return ResponseEntity.ok("Current user: " + authentication.getName());
     }
 }
