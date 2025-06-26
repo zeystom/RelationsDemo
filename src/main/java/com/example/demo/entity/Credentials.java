@@ -27,9 +27,9 @@ public class Credentials {
     @Column(nullable = false, name = "c_password")
     String password;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "c_role_id")
-    Role role;
+    private Role role;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "c_user_id", referencedColumnName = "id")
