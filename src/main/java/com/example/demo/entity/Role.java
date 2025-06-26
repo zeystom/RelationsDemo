@@ -19,7 +19,7 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(nullable = false, name = "c_name")
+    @Column(nullable = false, name = "name")
     String name;
 
 @OneToMany(mappedBy = "role")
