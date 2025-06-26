@@ -20,15 +20,19 @@ public class Credentials {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
     @Column(nullable = false, name = "c_username")
     String username;
+
     @Column(nullable = false, name = "c_password")
     String password;
+
     @ManyToOne
-            @JoinColumn(name = "c_role_id")
+    @JoinColumn(name = "c_role_id")
     Role role;
+
     @OneToOne(cascade = CascadeType.ALL)
-            @JoinColumn(name = "c_user_id", referencedColumnName = "id")
+    @JoinColumn(name = "c_user_id", referencedColumnName = "id")
     User user;
 
 }
