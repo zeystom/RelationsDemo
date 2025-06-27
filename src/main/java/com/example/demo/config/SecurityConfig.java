@@ -31,18 +31,25 @@ public class SecurityConfig {
         return username -> {
             Credentials credentials = credentialsRepository.findByUserName(username)
                     .orElseThrow(() -> new UsernameNotFoundException(username));
-            return User.builder().username(username).password(credentials.getPassword()).roles(credentials.getRole().getName()
-                    .replace("Role_", "")).build();
+
+
+            String roleName = credentials.getRole().getName().replace("ROLE_", "");
+
+            return User.builder()
+                    .username(username)
+                    .password(credentials.getPassword())
+                    .roles(roleName)  // This will add the proper ROLE_ prefix
+                    .build();
         };
     }
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/register", "/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources", "/webjars", "/swagger-ui.html").permitAll()
-                        .requestMatchers("/user/**").hasRole("USER")
-                        .anyRequest().authenticated()
+                                .authorizeHttpRequests(auth -> auth
+                                .requestMatchers("/api/auth/register", "/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources", "/webjars", "/swagger-ui.html")
+                                .permitAll()
+                                .requestMatchers("/user/**")
+                                .hasRole("USER").anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults()).logout(logout -> logout.logoutUrl("/logout")
                         .logoutSuccessHandler((request, response, authentication) -> {
