@@ -3,6 +3,7 @@ package com.example.demo.config;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -10,6 +11,7 @@ import java.util.Date;
 @Component
 public class JwtUtils {
 
+    @Value("${jwt.secret}")
     String jwtSecret;
     private final long accessTokenExpiresIn = 60000 * 15;
     private final long refreshTokenExpiresIn = 60000 * 60 * 24;
