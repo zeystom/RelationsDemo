@@ -23,4 +23,4 @@ springdoc:
   api-docs:
     path: /v3/api-docs
 jwt:
-  secret: 8tSKhGGynO0oT1bm4mi9tExjIkMKjUpYEoRENnnbyN85eqzP3DOxMyPGNjHUKqQsv8jKUancM2SCifxZ1Gww
+  secret: 8tSKhGGynO0oT1bm4mi9tExjIkMKjUpYEoRENnnbyN85eqzP3DOxMyPGNjHUKqQsv8jKUancM2SCifxZ1Gww8tSKhGGynO0oT1bm4mi9tExjIkMKjUpYEoRENnnbyN85eqzP3DOxMyPGNjHUKqQsv8jKUancM2SCifxZ1Gww
