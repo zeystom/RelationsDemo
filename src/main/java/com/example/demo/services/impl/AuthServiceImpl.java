@@ -44,19 +44,19 @@ public class AuthServiceImpl implements AuthService {
         credentialsRepository.save(credential);
     }
     @Override
-    public JwtResponse login(LoginRequest request){
+    public JwtResponse login(LoginRequest request) {
         Credentials credentials = credentialsRepository.findByUserName(request.username())
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-        if (!passwordEncoder.matches(request.password(), credentials.getPassword())){
+        if (!passwordEncoder.matches(request.password(), credentials.getPassword())) {
             throw new BadCredentialsException("Invalid password");
-
         }
 
-        String access = jwtUtils.extractUsername(request.username() );
-        String refresh = jwtUtils.generateAccessToken(request.username());
-       return  new JwtResponse(access, refresh);
+        // Fix token generation - these were reversed and incorrectly implemented
+        String accessToken = jwtUtils.generateAccessToken(request.username());
+        String refreshToken = jwtUtils.generateRefreshToken(request.username());
 
+        return new JwtResponse(accessToken, refreshToken);
     }
 
     @Override

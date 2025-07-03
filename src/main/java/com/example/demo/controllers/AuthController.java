@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 
+import com.example.demo.DTO.JwtResponse;
 import com.example.demo.DTO.LoginRequest;
 import com.example.demo.DTO.RegisterRequest;
 import com.example.demo.services.AuthService;
@@ -38,9 +39,9 @@ public class AuthController {
     }
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
-        String token = String.valueOf(authService.login(loginRequest));
+        JwtResponse jwtResponse = authService.login(loginRequest);
         return ResponseEntity.ok()
-                .header(HttpHeaders.AUTHORIZATION, token)
-                .body("Login successful");
+                .header(HttpHeaders.AUTHORIZATION, "Bearer " + jwtResponse.accessToken())
+                .body(jwtResponse);
     }
 }

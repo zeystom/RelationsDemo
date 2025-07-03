@@ -48,15 +48,16 @@ public class SecurityConfig {
     public SecurityFilterChain FilterChain(HttpSecurity http, JwtUtils jwtUtils, CredentialsRepository credentialsRepository) throws Exception {
         JwtAuthenticationFilter jwtFilter = new JwtAuthenticationFilter(jwtUtils, userDetailsService(credentialsRepository));
 
-
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/register", "/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources", "/webjars", "/swagger-ui.html")
+                        .requestMatchers("/api/auth/register", "/api/auth/login", "/swagger-ui/**", "/v3/api-docs/**") // Add login endpoint
                         .permitAll()
                         .anyRequest().authenticated()
-                ).sessionManagement(sess -> sess
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)).addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-        return http.build();
+                )
+                .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
+        return http.build();
     }
+
 }
