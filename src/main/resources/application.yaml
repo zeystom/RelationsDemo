@@ -22,5 +22,11 @@ springdoc:
     enabled: true
   api-docs:
     path: /v3/api-docs
+
+logging:
+  level:
+    sql: info
+    org.springframework.security: DEBUG
+
 jwt:
-  secret: 8tSKhGGynO0oT1bm4mi9tExjIkMKjUpYEoRENnnbyN85eqzP3DOxMyPGNjHUKqQsv8jKUancM2SCifxZ1Gww8tSKhGGynO0oT1bm4mi9tExjIkMKjUpYEoRENnnbyN85eqzP3DOxMyPGNjHUKqQsv8jKUancM2SCifxZ1Gww
+  secret: xMyPGNjHUKqQsv8jKUancM2SCifxZ1Gww8tSKhGGynO0oT1bm4mi9tExjIkMKjUpYEoRENnnbyN85eqzP3DOxMyPGNjHUKqQsv8jKUancM2SCifxZ1Gww
